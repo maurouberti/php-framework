@@ -1,19 +1,17 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
-
-$router = new PHP\Framework\Router;
-
-$router->get('/teste/{id}/{nome}', function($params) {
-    var_dump($params);
-    echo "<br>";
-
-
-    return 'aki';
-});
+require __DIR__ . '/../config/containers.php';
+require __DIR__ . '/../routes/routes.php';
 
 try {
-    echo $router->run();
+    $result = $router->run();
+    $response = new \PHP\Framework\Response;
+    $params = [
+        'container' => $container,
+        'params' => $result['params']
+    ];
+    $response($result['callback'], $params);
 } catch (PHP\Framework\Exceptions\HttpException $e) {
     echo "Erro: " . $e->getMessage();
 }
