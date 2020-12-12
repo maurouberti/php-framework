@@ -1,0 +1,22 @@
+{
+    "name": "maurouberti/php",
+    "description": "Framework em PHP",
+    "authors": [
+        {
+            "name": "Mauro Uberti",
+            "email": "maurouberti@hotmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "PHP\\Framework\\": "src"
+        }
+    },
+    "scripts": {
+        "server": "php -S localhost:8080 -t public"
+    },
+    "config": {
+        "process-timeout": 0
+    }
+}
