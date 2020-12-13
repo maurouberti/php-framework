@@ -1,5 +1,9 @@
 <?php
 
+$router->get('/teste', function() {
+    dd('errro');
+});
+
 $router->get('/usuario', '\App\Controllers\UsuariosController::index');
 $router->get('/usuario/{id:(\d+)}', '\App\Controllers\UsuariosController::show');
 $router->post('/usuario', '\App\Controllers\UsuariosController::create');
