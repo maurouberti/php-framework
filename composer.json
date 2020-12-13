@@ -14,8 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PHP\\Framework\\": "src",
-            "App\\": "app"
+            "PHP\\Framework\\": "src"
         }
     },
     "scripts": {

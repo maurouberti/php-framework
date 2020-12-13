@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-class UserEvent
+class UsuarioEvent
 {
     public function __invoke($e)
     {

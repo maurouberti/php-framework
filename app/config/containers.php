@@ -1,15 +1,10 @@
 <?php
 
-use Pimple\Container;
-
-$container = new Container();
-
 $container['events'] = function () {
     return new \Zend\EventManager\EventManager;
 };
 
 $container['db'] = function () {
-    echo "MYSQL";
     $dsn = 'mysql:host=localhost;dbname=dados';
     $user = 'root';
     $pass = '123456';

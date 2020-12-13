@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Pimple\Container;
 
-class User
+class Usuario
 {
     private $db;
     private $events;

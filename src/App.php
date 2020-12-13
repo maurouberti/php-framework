@@ -3,29 +3,48 @@
 namespace PHP\Framework;
 
 use PHP\Framework\Exceptions\HttpException;
+use PHP\Framework\Modules\Registry;
 use PHP\Framework\Response;
 use PHP\Framework\Router;
 use Pimple\Container;
 
 class App
 {
+    private $composer;
     private $container;
     private $middlewares = [
         'before' => [],
         'after' => []
     ];
 
-    public function __construct(Container $container = null)
+    private function loadRegistry($modules)
     {
-        $this->container = $container;
-        if ($this->container === null) {
-            $this->container = new Container;
+        $registry = new Registry;
+        $registry->setApp($this);
+        $registry->setComposer($this->composer);
+
+        foreach ($modules as $file => $module) {
+            require $file;
+            $registry->add(new $module);
         }
+        $registry->run();
+    }
+
+    public function __construct($composer, array $modules)
+    {
+        $this->composer = $composer;
+        $this->container = new Container;
+        $this->loadRegistry($modules);
     }
 
     public function middleware(string $on, $callback)
     {
         $this->middlewares[$on][] = $callback;
+    }
+
+    public function getContainer()
+    {
+        return $this->container;
     }
 
     public function getRouter()
