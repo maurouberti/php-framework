@@ -1,7 +1,5 @@
 <?php
 
-$router = new PHP\Framework\Router;
-
 $router->get('/user/{id}', '\App\Controllers\UsersController::show');
 
 $router->get('/teste', function() {

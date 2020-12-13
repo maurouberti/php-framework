@@ -1,16 +1,9 @@
 <?php
 
-use App\Models\User;
+$app->middleware('before', function($container) {
+    echo "<br>Middleware antes<br>";
+});
 
-$middlewares = [
-    'before' => [
-        function($container) {
-            echo "antes";
-        }
-    ],
-    'after' => [
-        function($container) {
-            echo "antes";
-        }
-    ],
-];
+$app->middleware('after', function($container) {
+    echo "<br>Middleware depois<br>";
+});
