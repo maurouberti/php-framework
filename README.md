@@ -14,7 +14,40 @@ Subir o servidor local
 composer server
 ```
 
-# CRUD Controller
+Criar banco de dados
+
+```
+composer migrate
+```
+
+Recriar banco de dados
+
+```
+composer migrate refresh
+```
+
+# Como Criar um módulo
+
+Criar as seguinte estrutura 
+
+appExemplo
+    |
+    +--config
+    |   |
+    |   +--containers.php
+    |   +--events.php
+    |   +--middlewares.php
+    |   +--routes.php
+    |
+    +--src
+    |   |
+    |   +--Controlles
+    |       |
+    |       +--ExemplosController.php
+    |
+    +--Module.php
+
+# Como criar um CRUD
 
 `CrudController.php`: Criado para não precisar reescrever um *controller* de CRUD.
 
