@@ -15,3 +15,7 @@ $container['db'] = function () {
     $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     return $pdo;
 };
+
+$container['usuario_model'] = function ($c) {
+    return new \App\Models\Usuario($c);
+};
