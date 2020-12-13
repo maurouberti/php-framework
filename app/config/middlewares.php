@@ -6,4 +6,5 @@ $app->middleware('before', function($container) {
 
 $app->middleware('after', function($container) {
     echo "<br>Middleware depois<br>";
+    // header('content-Type: application/json');
 });

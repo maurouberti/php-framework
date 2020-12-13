@@ -3,8 +3,8 @@
 Instalar
 
 ```
-git clone https://github.com/maurouberti/php.git
-cd php
+git clone https://github.com/maurouberti/php-framework.git
+cd php-framework
 composer dump
 ```
 

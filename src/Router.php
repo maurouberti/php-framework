@@ -50,6 +50,16 @@ class Router
     {
         $this->request('post', $route, $callback);
     }
+    
+    public function put(string $route, $callback): void
+    {
+        $this->request('put', $route, $callback);
+    }
+
+    public function delete(string $route, $callback): void
+    {
+        $this->request('delete', $route, $callback);
+    }
 
     public function run()
     {
