@@ -1,7 +1,7 @@
 <?php
 
-$router->get('/teste', function() {
-    dd('errro');
+$router->get('/', function() {
+    return file_get_contents(__DIR__ . '/../../front/index.html');
 });
 
 $router->get('/usuario', '\App\Controllers\UsuariosController::index');
