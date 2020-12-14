@@ -1,7 +1,7 @@
 <?php
 
 $router->get('/', function() {
-    return file_get_contents(__DIR__ . '/../../front/index.html');
+    return file_get_contents(__DIR__ . '/../../public/index.html');
 });
 
 $router->get('/usuario', '\App\Controllers\UsuariosController::index');
