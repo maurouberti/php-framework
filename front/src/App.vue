@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <mmu-header/>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Header from './partials/Header'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'mmu-header': Header
+  }
 }
 </script>
 
