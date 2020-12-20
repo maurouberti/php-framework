@@ -1,6 +1,6 @@
 # Framework em PHP
 
-Instalar
+## Instalar
 
 ```
 git clone https://github.com/maurouberti/php-framework.git
@@ -24,6 +24,20 @@ Recriar banco de dados
 
 ```
 composer migrate refresh
+```
+
+## Rodar em desenvolvimento
+
+Na pasta *php-framework*
+
+```
+composer server
+```
+
+Na pasta *php-framework/front*
+
+```
+npm run dev
 ```
 
 # Como Criar um módulo

@@ -1,28 +1,29 @@
 <template>
-  <div id="app">
-    <mmu-header/>
-    <router-view/>
-  </div>
+  <v-app id="app">
+    <mmu-header />
+    <v-main>
+      <v-container>
+        <router-view />
+      </v-container>
+    </v-main>
+    <v-footer app>
+      &copy; {{ year }}
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
-import Header from './partials/Header'
+import Header from "./components/Header";
 
 export default {
-  name: 'App',
+  name: "App",
+  computed: {
+    year() {
+      return (new Date()).getFullYear();
+    }
+  },
   components: {
-    'mmu-header': Header
-  }
-}
+    "mmu-header": Header,
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
