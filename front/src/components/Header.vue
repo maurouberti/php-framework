@@ -38,8 +38,7 @@ export default {
     return {
       drawer: true,
       items: [
-        { title: "Início", icon: "home", route: "/" },
-        { title: "Projetos", icon: "dashboard", route: "/hello-world" },
+        { title: "Projetos", icon: "dashboard", route: "/projects" },
         { title: "Agenda", icon: "schedule", route: "/schedule" },
       ],
     };
