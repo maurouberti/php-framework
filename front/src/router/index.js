@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Projects from '@/components/Projects'
+import ProjectList from '@/components/projects/List'
 import Schedule from '@/components/Schedule'
 
 Vue.use(Router)
@@ -14,7 +15,14 @@ export default new Router({
     {
       path: '/projects',
       name: 'Projects',
-      component: Projects
+      component: Projects,
+      children: [
+        {
+          path: '',
+          name: 'ProjectList',
+          component: ProjectList,
+        }
+      ]
     },
     {
       path: '/schedule',

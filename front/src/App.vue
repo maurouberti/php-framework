@@ -1,11 +1,13 @@
 <template>
   <v-app id="app">
     <mmu-header />
+    
     <v-main>
       <v-container>
         <router-view />
       </v-container>
     </v-main>
+    
     <v-footer app>
       &copy; {{ year }}
     </v-footer>
