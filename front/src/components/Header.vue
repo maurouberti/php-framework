@@ -18,7 +18,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar color="amber" clipped-left app>
+    <v-app-bar flat color="amber" clipped-left app>
       <v-app-bar-nav-icon @click="drawer = !drawer">
         <v-icon>menu</v-icon>
       </v-app-bar-nav-icon>
@@ -27,7 +27,7 @@
 
       <v-spacer></v-spacer>
 
-        <v-btn icon><v-icon>exit_to_app</v-icon></v-btn>
+      <v-btn icon><v-icon>exit_to_app</v-icon></v-btn>
     </v-app-bar>
   </div>
 </template>

@@ -3,7 +3,7 @@
     <mmu-header />
     
     <v-main>
-      <v-container>
+      <v-container class="pt-0">
         <router-view />
       </v-container>
     </v-main>

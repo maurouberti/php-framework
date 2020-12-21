@@ -1,16 +1,34 @@
 <template>
   <v-row>
     <v-col cols="3" v-for="n in 5" :key="n">
-      <v-card color="blue-grey" dark>
+      <v-card color="blue-grey darken-2" dark>
         <v-card-title primary-title>Título</v-card-title>
         <v-card-text
           >Texto texto texto texto texto texto texto texto texto texto texto
           texto texto texto texto texto texto</v-card-text
         >
         <v-card-actions>
-          <v-btn text>Ver +</v-btn>
+          <v-btn text :to="'/projects/' + n">Ver +</v-btn>
         </v-card-actions>
       </v-card>
     </v-col>
+
+    <v-col cols="3">
+      <projects-create></projects-create>
+    </v-col>
   </v-row>
 </template>
+
+<script>
+import ProjectCreate from "./Create";
+export default {
+  // computed: {
+  //   projects() {
+  //     return this.$store.state.projects.all;
+  //   },
+  // },
+  components: {
+    "projects-create": ProjectCreate,
+  },
+};
+</script>
