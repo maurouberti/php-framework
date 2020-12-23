@@ -14,3 +14,11 @@
     </v-container>
   </v-row>
 </template>
+
+<script>
+export default {
+  mounted() {
+    this.$store.dispatch('projects/getAll');
+  }
+}
+</script>

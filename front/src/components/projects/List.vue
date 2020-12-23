@@ -4,8 +4,7 @@
       <v-card color="blue-grey darken-2" dark>
         <v-card-title primary-title>{{ project.title }}</v-card-title>
         <v-card-text
-          >Texto texto texto texto texto texto texto texto texto texto texto
-          texto texto texto texto texto texto</v-card-text
+          >{{ project.description }}</v-card-text
         >
         <v-card-actions>
           <v-btn text :to="'/projects/' + project.id">Ver +</v-btn>
@@ -30,6 +29,6 @@ export default {
   },
   components: {
     "projects-create": ProjectCreate,
-  },
+  }
 };
 </script>
