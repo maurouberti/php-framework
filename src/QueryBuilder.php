@@ -4,8 +4,8 @@ namespace PHP\Framework;
 
 class QueryBuilder
 {
-    private $sql = '';
-    private $bind = [];
+    protected $sql = '';
+    protected $bind = [];
     public $where = '';
     public $bindWhere = [];
     public $orderBy = '';

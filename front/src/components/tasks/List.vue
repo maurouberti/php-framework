@@ -1,5 +1,5 @@
 <template>
-  <v-list three-line subheader>
+  <v-list subheader>
     <v-subheader>Tarefas {{ section }}</v-subheader>
     <v-divider></v-divider>
 

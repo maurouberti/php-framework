@@ -10,4 +10,10 @@ class SubtasksController extends CrudController
     {
         return 'subtasks_model';
     }
+
+    public function listByTask($container, $request)
+    {
+        $id = (int) $request->query->get('id');
+        return $container['subtasks_model']->where('task_id', '=', $id)->get();
+    }
 }

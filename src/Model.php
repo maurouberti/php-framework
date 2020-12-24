@@ -70,8 +70,6 @@ abstract class Model extends QueryBuilder
     
     public function update(array $data)
     {
-        $result = $this->get();
-
         $this->events->trigger('updating.' . $this->table, null, $data);
 
         $data = $this->setData($data);
@@ -82,6 +80,9 @@ abstract class Model extends QueryBuilder
         $query = $this->sqlUpdate($this->table, $data)->getData();
         $stmt = $this->db->prepare($query->sql);
         $stmt->execute(array_values($query->bind));
+
+        $this->bind = [];
+        $result = $this->first();
 
         $this->events->trigger('updated.' . $this->table, null, $result);
 
