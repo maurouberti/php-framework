@@ -10,4 +10,10 @@ class SectionsController extends CrudController
     {
         return 'sections_model';
     }
+
+    public function listByProject($container, $request)
+    {
+        $id = $request->query->get('id');
+        return $container['sections_model']->where('project_id', '=', $id)->get();
+    }
 }

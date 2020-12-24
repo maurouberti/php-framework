@@ -49,6 +49,8 @@ abstract class Model extends QueryBuilder
     {
         $this->events->trigger('creating.' . $this->table, null, $data);
 
+        $data = $this->setData($data);
+
         $query = $this->sqlInsert($this->table, $data)->getData();
         $stmt = $this->db->prepare($query->sql);
         $stmt->execute($query->bind);
@@ -66,6 +68,8 @@ abstract class Model extends QueryBuilder
         $result = $this->get();
 
         $this->events->trigger('updating.' . $this->table, null, $data);
+
+        $data = $this->setData($data);
 
         $query = $this->sqlUpdate($this->table, $data)->getData();
         $stmt = $this->db->prepare($query->sql);
@@ -89,5 +93,19 @@ abstract class Model extends QueryBuilder
         $this->events->trigger('deleted.' . $this->table, null, $result);
 
         return $result;
+    }
+
+    protected function setData($data)
+    {
+        foreach ($data as $field => $value) {
+            $method = str_replace('_', ' ', $field);
+            $method = ucwords($method);
+            $method = str_replace(' ', '', $method);
+            $method = "set{$method}";
+            if (method_exists($this, $method)) {
+                $data[$field] = $this->$method($value);
+            }
+        }
+        return $data;
     }
 }

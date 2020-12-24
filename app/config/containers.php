@@ -4,7 +4,7 @@ $container['events'] = function () {
     return new \Zend\EventManager\EventManager;
 };
 
-$container['settings'] = function (){
+$container['settings'] = function () {
     return [
             'db' => [
                 'dsn' => 'mysql:host=localhost;',
@@ -29,8 +29,8 @@ $container['db'] = function ($c) {
     return $pdo;
 };
 
-$container['usuario_model'] = function ($c) {
-    return new \App\Models\Usuario($c);
+$container['user_model'] = function ($c) {
+    return new \App\Models\User($c);
 };
 
 return $container;

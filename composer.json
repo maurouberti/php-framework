@@ -10,7 +10,8 @@
     "require": {
         "symfony/http-foundation": "^5.2",
         "pimple/pimple": "^3.3",
-        "zendframework/zend-eventmanager": "^3.2"
+        "zendframework/zend-eventmanager": "^3.2",
+        "firebase/php-jwt": "^5.2"
     },
     "autoload": {
         "psr-4": {

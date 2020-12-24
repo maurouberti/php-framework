@@ -28,7 +28,7 @@ class Router
         return strtolower($_SERVER['REQUEST_METHOD'] ?? 'GET');
     }
 
-    private function getCurrentUrl(): string
+    public function getCurrentUrl(): string
     {
         $url = $_SERVER['PATH_INFO'] ?? '/';
         $url = strlen($url) > 1 ? rtrim($url, '/') : $url;
