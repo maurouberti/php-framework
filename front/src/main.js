@@ -6,6 +6,7 @@ import router from './router'
 import vuetify from './vuetify'
 import store from './store'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
+import './axios'
 
 Vue.config.productionTip = false
 

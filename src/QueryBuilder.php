@@ -6,9 +6,9 @@ class QueryBuilder
 {
     private $sql = '';
     private $bind = [];
-    private $where = '';
-    private $bindWhere = [];
-    private $orderBy = '';
+    public $where = '';
+    public $bindWhere = [];
+    public $orderBy = '';
     
     public function sqlSelect(string $table)
     {

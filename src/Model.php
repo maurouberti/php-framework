@@ -51,6 +51,11 @@ abstract class Model extends QueryBuilder
 
         $data = $this->setData($data);
 
+        /** create não pode ter where/orderBy */
+        $this->where = '';
+        $this->bindWhere = [];
+        $this->orderBy = '';
+
         $query = $this->sqlInsert($this->table, $data)->getData();
         $stmt = $this->db->prepare($query->sql);
         $stmt->execute($query->bind);
@@ -71,6 +76,9 @@ abstract class Model extends QueryBuilder
 
         $data = $this->setData($data);
 
+        /** create não pode ter orderBy */
+        $this->orderBy = '';
+        
         $query = $this->sqlUpdate($this->table, $data)->getData();
         $stmt = $this->db->prepare($query->sql);
         $stmt->execute(array_values($query->bind));
