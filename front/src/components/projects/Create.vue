@@ -33,7 +33,12 @@
                 readonly
               ></v-text-field>
             </template>
-            <v-date-picker v-model="due_date" no-title scrollable>
+            <v-date-picker
+              v-model="due_date"
+              locale="pt-br"
+              no-title
+              scrollable
+            >
               <v-btn text color="secondary" @click="menu = false"
                 >Cancelar</v-btn
               >

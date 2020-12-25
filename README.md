@@ -61,6 +61,8 @@ appExemplo
     |
     +--Module.php
 
+Registar módulo no arquivo `config/Modules.php`
+
 # Como criar um CRUD
 
 `CrudController.php`: Criado para não precisar reescrever um *controller* de CRUD.
