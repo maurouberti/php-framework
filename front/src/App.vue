@@ -1,31 +1,23 @@
 <template>
-  <v-app id="app">
-    <mmu-header />
-    
-    <v-main>
-      <v-container class="pt-0">
-        <router-view />
-      </v-container>
-    </v-main>
-    
-    <v-footer app>
-      &copy; {{ year }}
-    </v-footer>
-  </v-app>
+  <div>
+    <dtemplate v-if="isLogged" />
+    <login v-if="!isLogged" />
+  </div>
 </template>
 
 <script>
-import Header from "./components/Header";
+import dtemplate from './templates/default.vue';
+import login from './templates/login.vue';
 
 export default {
-  name: "App",
-  computed: {
-    year() {
-      return (new Date()).getFullYear();
-    }
-  },
   components: {
-    "mmu-header": Header,
+    dtemplate,
+    login
   },
+  computed: {
+    isLogged() {
+      return this.$store.state.auth.isLogged;
+    }
+  }
 };
 </script>

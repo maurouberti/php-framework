@@ -27,7 +27,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon><v-icon>exit_to_app</v-icon></v-btn>
+      <v-btn @click="logout()" icon><v-icon>exit_to_app</v-icon></v-btn>
     </v-app-bar>
   </div>
 </template>
@@ -43,5 +43,10 @@ export default {
       ],
     };
   },
+  methods: {
+    logout() {
+      this.$store.dispatch('auth/logout');
+    }
+  }
 };
 </script>
